@@ -19,7 +19,8 @@ from app import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('/files', views.index(urll)),
+    path('files/', views.index),
+    path('download/', views.downloadF),
     path('admin/',admin.site.urls),
-    re_path('.*', TemplateView.as_view(template_name='index.html')),
+    re_path('', TemplateView.as_view(template_name='index.html')),
 ]
